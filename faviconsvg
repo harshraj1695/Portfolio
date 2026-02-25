@@ -1,0 +1,20 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect x="8" y="8" width="104" height="104" rx="20" fill="#0a0f1f"></rect>
+
+  <!-- Hexagon system boundary -->
+  <polygon points="60,22 92,40 92,80 60,98 28,80 28,40" fill="none" stroke="#4cc9f0" stroke-width="3" stroke-linejoin="round"></polygon>
+
+  <!-- Core kernel -->
+  <circle cx="60" cy="60" r="6" fill="#ffffff"></circle>
+
+  <!-- Data paths -->
+  <line x1="60" y1="28" x2="60" y2="52" stroke="#4cc9f0" stroke-width="2"></line>
+  <line x1="86" y1="45" x2="68" y2="56" stroke="#4cc9f0" stroke-width="2"></line>
+  <line x1="86" y1="75" x2="68" y2="64" stroke="#4cc9f0" stroke-width="2"></line>
+  <line x1="34" y1="75" x2="52" y2="64" stroke="#4cc9f0" stroke-width="2"></line>
+  <line x1="34" y1="45" x2="52" y2="56" stroke="#4cc9f0" stroke-width="2"></line>
+  <line x1="60" y1="92" x2="60" y2="68" stroke="#4cc9f0" stroke-width="2"></line>
+
+</svg>

@@ -3,13 +3,20 @@ import type { Experience } from '../types';
 import './Experience.css';
 
 const experienceData: Experience[] = [
-   {
+  {
     company: 'WatchGuard Technologies Pvt. Ltd.',
     role: 'Kernel / Systems Engineering Intern',
     period: 'Jul 2025 – Present',
-    description:
-      'Gaining hands-on experience in Linux system programming using C, including file I/O, process management, IPC mechanisms, and multithreading with POSIX APIs. Worked with networking concepts such as TCP/UDP socket programming and explored Linux kernel modules, user space–kernel space interaction, and DPDK-based packet processing fundamentals.',
-    icon: 'WG',
+    description: [
+      'Designed, implemented, and debugged Linux kernel modules, analyzing driver architecture and user–kernel space interaction, leveraging GDB and dmesg for low-level debugging.',
+
+      'Developed and tested TCP/UDP socket-based applications, examining Linux networking stack behavior and high-performance packet processing using DPDK (Poll Mode Drivers, Hugepages).',
+
+      'Developed and integrated VPP plugins, understanding VPP’s vector packet processing model and graph node architecture for high-throughput packet forwarding.',
+
+      'Customized and compiled the Linux kernel for BeagleBone Black, configuring U-Boot bootloader and managing kernel image loading during system initialization.'
+    ],
+    icon: '/watchguard.png',
   }
 ];
 
@@ -28,10 +35,7 @@ const ExperienceSection = () => {
         { threshold: 0.2 }
       );
 
-      if (ref) {
-        observer.observe(ref);
-      }
-
+      if (ref) observer.observe(ref);
       return observer;
     });
 
@@ -51,7 +55,9 @@ const ExperienceSection = () => {
               className={`timeline-item ${visibleItems.has(index) ? 'visible' : ''}`}
             >
               <div className="timeline-marker">
-                <div className="timeline-icon">{exp.icon}</div>
+                <div className="timeline-icon">
+                  <img src={exp.icon} alt={exp.company} />
+                </div>
               </div>
 
               <div className="timeline-content">
@@ -59,8 +65,15 @@ const ExperienceSection = () => {
                   <h3 className="timeline-role">{exp.role}</h3>
                   <span className="timeline-period">{exp.period}</span>
                 </div>
+
                 <h4 className="timeline-company">{exp.company}</h4>
-                <p className="timeline-description">{exp.description}</p>
+
+                <ul className="timeline-description">
+                  {exp.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+
               </div>
             </div>
           ))}

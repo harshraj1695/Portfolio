@@ -29,8 +29,9 @@ const Hero = () => {
             Projects
           </button>
           <a
-            href="https://drive.google.com/file/d/15-qzBWdljpLVl4fAk2WFNfZY7_g2GtvP/view?usp=sharing.pdf"
+            href="/RESUME.pdf"
             target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
           >
             Resume

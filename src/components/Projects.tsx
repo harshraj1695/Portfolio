@@ -3,8 +3,9 @@ import type { Project } from '../types';
 import './Projects.css';
 
 const projectsData: Project[] = [
- {
+{
   title: 'Multi-Client Chat Application (C, TCP Sockets)',
+  icon: '💬',
   description:
     'Implemented a multi-client chat server in C using TCP sockets and select() based I/O multiplexing to handle concurrent client communication without multithreading.',
   techStack: ['C', 'TCP Sockets', 'select()', 'I/O Multiplexing', 'Linux'],
@@ -12,39 +13,44 @@ const projectsData: Project[] = [
 },
 {
   title: 'DPDK Graph-Based Programmable Firewall Framework',
+icon: '🛡️',
   description:
-    'Built a high-performance packet processing framework using the DPDK Graph API with a modular pipeline (RX → Parser → Firewall → TX) and a CLI control plane to dynamically enable or disable firewall nodes and monitor per-node packet statistics.',
+    'Built a high-performance packet processing framework using the DPDK Graph API with a modular pipeline (RX → Parser → Firewall → TX) and a CLI control plane.',
   techStack: ['C', 'DPDK', 'DPDK Graph API', 'Packet Processing', 'Linux'],
   githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners/tree/main/dpdk-graph-fw',
 },
 {
   title: 'VPP Custom ARP Responder Plugin',
+  icon: '📡',
   description:
-    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets in the device-input pipeline and generates ARP replies using vectorized packet processing.',
+    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets and generates ARP replies using vectorized packet processing.',
   techStack: ['C', 'VPP Plugin', 'Vector Packet Processing', 'Networking', 'Linux'],
   githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
 },
-  {
+{
   title: 'C Systems & Data Structures Projects Collection',
+  icon: '🧠',
   description:
-    'Comprehensive collection of C programming projects covering data structures, Linux system programming, sockets, IPC mechanisms, multithreading, and file handling. Includes TCP/UDP client-server applications, thread pools, and low-level OS concepts.',
+    'Collection of C programming projects covering data structures, sockets, IPC mechanisms, multithreading, and system programming.',
   techStack: ['C', 'POSIX APIs', 'Linux', 'Sockets', 'Multithreading', 'IPC'],
   githubUrl: 'https://github.com/harshraj1695/Cprojects',
 },
 {
   title: 'Linux Kernel Programming & Device Drivers',
+  icon: '🐧',
   description:
-    'Implemented Linux kernel modules and device drivers including character drivers, interrupt handling (top-half/bottom-half), Ethernet driver concepts, and embedded Linux development on BeagleBone.',
+    'Implemented Linux kernel modules and device drivers including character drivers, interrupts, and embedded Linux development on BeagleBone.',
   techStack: ['C', 'Linux Kernel', 'Device Drivers', 'Embedded Linux', 'BeagleBone'],
   githubUrl: 'https://github.com/harshraj1695/kernel_programing',
 },
-  {
+{
   title: 'DPDK High-Performance Packet Processing',
+  icon: '⚡',
   description:
-    'Built multiple networking programs using DPDK to demonstrate user-space packet processing, memory management with hugepages, and high-speed NIC communication for low-latency applications.',
+    'Built networking programs using DPDK demonstrating user-space packet processing, hugepages memory management, and high-speed NIC communication.',
   techStack: ['C', 'DPDK', 'Linux', 'Networking', 'HugePages'],
   githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners',
-},
+}
 ];
 
 const Projects = () => {
@@ -85,7 +91,7 @@ const Projects = () => {
               className={`project-card ${visibleProjects.has(index) ? 'visible' : ''}`}
             >
               <div className="project-header">
-                <div className="project-icon">{'</>'.charAt(index % 3)}</div>
+<div className="project-icon">{project.icon}</div>
               </div>
 
               <h3 className="project-title">{project.title}</h3>

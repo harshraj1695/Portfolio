@@ -1,11 +1,11 @@
-export interface Project {
+export type Project = {
   title: string;
   description: string;
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
-  image?: string;
-}
+  icon: string;
+};
 
 export interface Skill {
   name: string;

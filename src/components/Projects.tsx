@@ -3,27 +3,27 @@ import type { Project } from '../types';
 import './Projects.css';
 
 const projectsData: Project[] = [
-  {
-    title: 'Multi-Client Chat Server (C, TCP, Node.js)',
-    description:
-      'Built a concurrent chat server in C using TCP sockets and select() for real-time multi-client communication.',
-    techStack: ['C', 'Socket Programming', 'TCP/IP', 'Linux'],
-    githubUrl: 'https://github.com/harshraj1695/TCP_chat_application',
-  },
-  {
-    title: 'Web3 Decentralized Banking Application',
-    description:
-      'Developed a decentralized banking app on the Internet Computer platform with secure smart-contract-based transactions.',
-    techStack: ['JavaScript', 'Blockchain', 'Internet Computer', 'Web3'],
-    githubUrl: 'https://github.com/harshraj1695/dbank',
-  },
-  {
-    title: 'Portfolio Web App with CI/CD & Google Sheets Integration',
-    description:
-      'Created a responsive portfolio with Google Sheets backend integration and automated deployment using GitHub Actions.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'GitHub Actions'],
-    githubUrl: 'https://github.com/harshraj1695/portfolio-orchestration',
-  },
+ {
+  title: 'Multi-Client Chat Application (C, TCP Sockets)',
+  description:
+    'Implemented a multi-client chat server in C using TCP sockets and select() based I/O multiplexing to handle concurrent client communication without multithreading.',
+  techStack: ['C', 'TCP Sockets', 'select()', 'I/O Multiplexing', 'Linux'],
+  githubUrl: 'https://github.com/harshraj1695/TCP_chat_application',
+},
+{
+  title: 'DPDK Graph-Based Programmable Firewall Framework',
+  description:
+    'Built a high-performance packet processing framework using the DPDK Graph API with a modular pipeline (RX → Parser → Firewall → TX) and a CLI control plane to dynamically enable or disable firewall nodes and monitor per-node packet statistics.',
+  techStack: ['C', 'DPDK', 'DPDK Graph API', 'Packet Processing', 'Linux'],
+  githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners/tree/main/dpdk-graph-fw',
+},
+{
+  title: 'VPP Custom ARP Responder Plugin',
+  description:
+    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets in the device-input pipeline and generates ARP replies using vectorized packet processing.',
+  techStack: ['C', 'VPP Plugin', 'Vector Packet Processing', 'Networking', 'Linux'],
+  githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
+},
   {
   title: 'C Systems & Data Structures Projects Collection',
   description:

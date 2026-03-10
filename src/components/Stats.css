@@ -12,15 +12,17 @@
   margin-bottom: 40px;
 }
 
-/* GRID */
+/* GRID — perfectly split page */
 
 .stats-grid {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
+
+  align-items: stretch;
 }
 
 /* CARD */
@@ -30,6 +32,11 @@
   backdrop-filter: blur(15px);
   border-radius: 16px;
   padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   transition: 0.3s;
 }
@@ -38,19 +45,53 @@
   transform: translateY(-6px);
 }
 
-/* IMAGE */
+/* GitHub stats container */
+
+.github-stats-container {
+  min-height: 260px; /* prevents layout shift */
+}
+
+/*  stats row is for the two images in the GitHub stats card, to stack them on mobile */
+.stats-row{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.stats-img{
+  width:100%;
+  border-radius:10px;
+}
+
+/* IMAGES */
 
 .stats-img {
   width: 100%;
   border-radius: 10px;
-  margin: 12px 0;
+}
+
+/* BUTTON */
+
+.toggle-btn {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toggle-btn:hover {
+  background: #1d4ed8;
 }
 
 /* LINK */
 
 .stat-link {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 12px;
   color: #38bdf8;
   text-decoration: none;
   font-weight: 600;
@@ -60,10 +101,35 @@
   color: #22c55e;
 }
 
+/* ANIMATION */
+
+.fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* MOBILE */
 
 @media (max-width: 900px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    flex-direction: column;
+  }
+
+  .stats-img.half {
+    width: 100%;
   }
 }

@@ -3,6 +3,23 @@ import type { Project } from '../types';
 import './Projects.css';
 
 const projectsData: Project[] = [
+
+{
+  title: 'GraphShield – DPDK Graph-Based Packet Filtering Engine',
+  icon: '🛡️',
+  description:
+    'Built a high-performance packet filtering engine using the DPDK graph framework, demonstrating graph-based dataplane design and batch packet processing. Implemented a CLI interface to dynamically enable or disable graph nodes at runtime, allowing flexible control over packet processing pipelines without restarting the application.',
+  techStack: ['C', 'DPDK Graph', 'Linux', 'Networking', 'Packet Processing', 'CLI'],
+  githubUrl: 'https://github.com/harshraj1695/GraphShield',
+},
+{
+  title: 'VPP Custom ARP Responder Plugin',
+  icon: '📡',
+  description:
+    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets and generates ARP replies using vectorized packet processing.',
+  techStack: ['C', 'VPP Plugin', 'Vector Packet Processing', 'Networking', 'Linux'],
+  githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
+},
 {
   title: 'Multi-Client Chat Application (C, TCP Sockets)',
   icon: '💬',
@@ -19,22 +36,14 @@ icon: '🛡️',
   techStack: ['C', 'DPDK', 'DPDK Graph API', 'Packet Processing', 'Linux'],
   githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners/tree/main/dpdk-graph-fw',
 },
-{
-  title: 'VPP Custom ARP Responder Plugin',
-  icon: '📡',
-  description:
-    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets and generates ARP replies using vectorized packet processing.',
-  techStack: ['C', 'VPP Plugin', 'Vector Packet Processing', 'Networking', 'Linux'],
-  githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
-},
-{
-  title: 'C Systems & Data Structures Projects Collection',
-  icon: '🧠',
-  description:
-    'Collection of C programming projects covering data structures, sockets, IPC mechanisms, multithreading, and system programming.',
-  techStack: ['C', 'POSIX APIs', 'Linux', 'Sockets', 'Multithreading', 'IPC'],
-  githubUrl: 'https://github.com/harshraj1695/Cprojects',
-},
+// {
+//   title: 'C Systems & Data Structures Projects Collection',
+//   icon: '🧠',
+//   description:
+//     'Collection of C programming projects covering data structures, sockets, IPC mechanisms, multithreading, and system programming.',
+//   techStack: ['C', 'POSIX APIs', 'Linux', 'Sockets', 'Multithreading', 'IPC'],
+//   githubUrl: 'https://github.com/harshraj1695/Cprojects',
+// },
 {
   title: 'Linux Kernel Programming & Device Drivers',
   icon: '🐧',

@@ -1,51 +1,67 @@
-import { useEffect, useRef, useState } from 'react';
-import type { SkillCategory } from '../types';
-import './Skills.css';
+import { useEffect, useRef, useState } from "react";
+import type { SkillCategory } from "../types";
+import "./Skills.css";
+
+import {
+  SiC,
+  SiCplusplus,
+  SiJavascript,
+  SiLinux,
+  SiDocker,
+  SiGit,
+  SiGnu,
+} from "react-icons/si";
+
+import { FaNetworkWired } from "react-icons/fa";
+import { TbBinaryTree } from "react-icons/tb";
+import { MdMemory } from "react-icons/md";
 
 const skillsData: SkillCategory[] = [
   {
-    category: 'Programming',
+    category: "Programming",
     skills: [
-      { name: 'C', icon: 'C' },
-      { name: 'C++', icon: 'C++' },
-      { name: 'JavaScript', icon: 'JS' },
-      { name: 'Data Structures & Algorithms', icon: 'DS' },
+      { name: "C", icon: <SiC /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "JavaScript", icon: <SiJavascript /> },
+      { name: "Data Structures & Algorithms", icon: <TbBinaryTree /> },
     ],
   },
   {
-    category: 'Linux System Programming',
+    category: "Linux System Programming",
     skills: [
-      { name: 'POSIX APIs', icon: 'PX' },
-      { name: 'Process & Thread Management', icon: 'TH' },
-      { name: 'IPC Mechanisms', icon: 'IP' },
-      { name: 'File I/O', icon: 'IO' },
+      { name: "POSIX APIs", icon: <SiLinux /> },
+      { name: "Process & Thread Management", icon: <MdMemory /> },
+      { name: "IPC Mechanisms", icon: <FaNetworkWired /> },
+      { name: "File I/O", icon: <SiLinux /> },
     ],
   },
   {
-    category: 'Networking',
+    category: "Networking",
     skills: [
-      { name: 'Socket Programming (TCP/UDP)', icon: 'SK' },
-      { name: 'Linux Networking Stack', icon: 'LN' },
-      { name: 'Ethernet & NIC Basics', icon: 'ET' },
-      { name: 'Packet Processing Fundamentals', icon: 'PP' },
+      { name: "Socket Programming (TCP/UDP)", icon: <FaNetworkWired /> },
+      { name: "Linux Networking Stack", icon: <SiLinux /> },
+      { name: "Ethernet & NIC Basics", icon: <FaNetworkWired /> },
+      { name: "Packet Processing Fundamentals", icon: <FaNetworkWired /> },
     ],
   },
   {
-    category: 'Kernel & Performance',
+    category: "Kernel & Performance",
     skills: [
-      { name: 'Linux Kernel Modules', icon: 'KM' },
-      { name: 'User–Kernel Interaction', icon: 'UK' },
-      { name: 'DPDK Fundamentals', icon: 'DP' },
-      { name: 'Concurrency & Multithreading', icon: 'MT' },
+      { name: "Linux Kernel Modules", icon: <SiLinux /> },
+      { name: "User–Kernel Interaction", icon: <MdMemory /> },
+      { name: "DPDK", icon: <FaNetworkWired /> },
+      { name: "VPP", icon: <FaNetworkWired /> },
+      { name: "Concurrency & Multithreading", icon: <MdMemory /> },
     ],
   },
   {
-    category: 'Tools & Technologies',
+    category: "Tools & Technologies",
     skills: [
-      { name: 'GCC', icon: 'GC' },
-      { name: 'GDB / KGDB', icon: 'DB' },
-      { name: 'Make', icon: 'MK' },
-      { name: 'Git & Docker', icon: 'GD' },
+      { name: "GCC", icon: <SiGnu /> },
+      { name: "GDB / KGDB", icon: <MdMemory /> },
+      { name: "Make", icon: <SiLinux /> },
+      { name: "Git", icon: <SiGit /> },
+      { name: "Docker", icon: <SiDocker /> },
     ],
   },
 ];
@@ -55,7 +71,11 @@ const Skills = () => {
   const skillRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const observers = skillRefs.current.map((ref, index) => {
+    const observers: IntersectionObserver[] = [];
+
+    skillRefs.current.forEach((ref, index) => {
+      if (!ref) return;
+
       const observer = new IntersectionObserver(
         ([entry]) => {
           if (entry.isIntersecting) {
@@ -65,14 +85,11 @@ const Skills = () => {
         { threshold: 0.2 }
       );
 
-      if (ref) {
-        observer.observe(ref);
-      }
-
-      return observer;
+      observer.observe(ref);
+      observers.push(observer);
     });
 
-    return () => observers.forEach((observer) => observer.disconnect());
+    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   return (
@@ -84,10 +101,15 @@ const Skills = () => {
           {skillsData.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              ref={(el) => { skillRefs.current[categoryIndex] = el; }}
-              className={`skill-category ${visibleSkills.has(categoryIndex) ? 'visible' : ''}`}
+              ref={(el) => {
+                skillRefs.current[categoryIndex] = el;
+              }}
+              className={`skill-category ${
+                visibleSkills.has(categoryIndex) ? "visible" : ""
+              }`}
             >
               <h3 className="category-title">{category.category}</h3>
+
               <div className="skills-grid">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="skill-badge">

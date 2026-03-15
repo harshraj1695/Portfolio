@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export type Project = {
   title: string;
   description: string;
@@ -9,7 +11,7 @@ export type Project = {
 
 export interface Skill {
   name: string;
-  icon: string;
+  icon: ReactNode;
 }
 
 export interface SkillCategory {

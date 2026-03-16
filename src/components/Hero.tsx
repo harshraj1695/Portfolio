@@ -21,7 +21,7 @@ const Hero = () => {
 
         <p className="hero-subtitle">
           C • POSIX APIs • Socket Programming • Kernel Modules • DPDK
-          Fundamentals • Operating Systems
+          Fundamentals • VPP • Operating Systems
         </p>
 
         <div className="hero-buttons">

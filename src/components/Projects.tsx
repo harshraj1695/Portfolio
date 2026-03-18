@@ -3,63 +3,46 @@ import type { Project } from '../types';
 import './Projects.css';
 
 const projectsData: Project[] = [
-
-{
-  title: 'GraphShield – DPDK Graph-Based Packet Filtering Engine',
-  icon: '🛡️',
-  description:
-    'Built a high-performance packet filtering engine using the DPDK graph framework, demonstrating graph-based dataplane design and batch packet processing. Implemented a CLI interface to dynamically enable or disable graph nodes at runtime, allowing flexible control over packet processing pipelines without restarting the application.',
-  techStack: ['C', 'DPDK Graph', 'Linux', 'Networking', 'Packet Processing', 'CLI'],
-  githubUrl: 'https://github.com/harshraj1695/GraphShield',
-},
-{
-  title: 'VPP Custom ARP Responder Plugin',
-  icon: '📡',
-  description:
-    'Developed a custom VPP plugin implementing an ARP responder node that intercepts packets and generates ARP replies using vectorized packet processing.',
-  techStack: ['C', 'VPP Plugin', 'Vector Packet Processing', 'Networking', 'Linux'],
-  githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
-},
-{
-  title: 'Multi-Client Chat Application (C, TCP Sockets)',
-  icon: '💬',
-  description:
-    'Implemented a multi-client chat server in C using TCP sockets and select() based I/O multiplexing to handle concurrent client communication without multithreading.',
-  techStack: ['C', 'TCP Sockets', 'select()', 'I/O Multiplexing', 'Linux'],
-  githubUrl: 'https://github.com/harshraj1695/TCP_chat_application',
-},
-{
-  title: 'DPDK Graph-Based Programmable Firewall Framework',
-icon: '🛡️',
-  description:
-    'Built a high-performance packet processing framework using the DPDK Graph API with a modular pipeline (RX → Parser → Firewall → TX) and a CLI control plane.',
-  techStack: ['C', 'DPDK', 'DPDK Graph API', 'Packet Processing', 'Linux'],
-  githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners/tree/main/dpdk-graph-fw',
-},
-// {
-//   title: 'C Systems & Data Structures Projects Collection',
-//   icon: '🧠',
-//   description:
-//     'Collection of C programming projects covering data structures, sockets, IPC mechanisms, multithreading, and system programming.',
-//   techStack: ['C', 'POSIX APIs', 'Linux', 'Sockets', 'Multithreading', 'IPC'],
-//   githubUrl: 'https://github.com/harshraj1695/Cprojects',
-// },
-{
-  title: 'Linux Kernel Programming & Device Drivers',
-  icon: '🐧',
-  description:
-    'Implemented Linux kernel modules and device drivers including character drivers, interrupts, and embedded Linux development on BeagleBone.',
-  techStack: ['C', 'Linux Kernel', 'Device Drivers', 'Embedded Linux', 'BeagleBone'],
-  githubUrl: 'https://github.com/harshraj1695/kernel_programing',
-},
-{
-  title: 'DPDK High-Performance Packet Processing',
-  icon: '⚡',
-  description:
-    'Built networking programs using DPDK demonstrating user-space packet processing, hugepages memory management, and high-speed NIC communication.',
-  techStack: ['C', 'DPDK', 'Linux', 'Networking', 'HugePages'],
-  githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners',
-}
+  {
+    title: 'GraphShield – DPDK Graph-Based Packet Filtering Engine',
+    icon: '🛡️',
+    description:
+      'Built a high-performance userspace firewall using the DPDK Graph API to bypass kernel-path bottlenecks. Implements a modular pipeline (RX → Parser → ACL Firewall → TX) with connection tracking and per-flow statistics. Includes a runtime CLI control plane to dynamically enable/disable graph nodes and manage allow/reject policies without restarting the data plane.',
+    techStack: ['C', 'DPDK Graph API', 'ACL', 'CLI', 'Linux', 'Packet Processing'],
+    githubUrl: 'https://github.com/harshraj1695/GraphShield',
+  },
+  {
+    title: 'VPP Custom ARP Responder Plugin',
+    icon: '📡',
+    description:
+      'Authored a custom VPP plugin that intercepts ARP requests within the device-input pipeline and generates vectorized ARP replies for low latency and high throughput. Extends VPP\'s graph node architecture with a new processing node — without modifying the core — demonstrating clean plugin integration with the VPP framework.',
+    techStack: ['C', 'VPP Plugin API', 'Vector Packet Processing', 'Linux', 'Networking'],
+    githubUrl: 'https://github.com/harshraj1695/VPP_For_Beginners/tree/main/plugins/myarp',
+  },
+  {
+    title: 'Linux Kernel Programming & Device Drivers',
+    icon: '🐧',
+    description:
+      'Implemented Linux kernel modules and character device drivers covering interrupt handling, user–kernel space interaction, and embedded Linux development. Includes custom kernel compilation and deployment on BeagleBone Black with U-Boot bootloader configuration.',
+    techStack: ['C', 'Linux Kernel', 'Device Drivers', 'Embedded Linux', 'BeagleBone', 'U-Boot'],
+    githubUrl: 'https://github.com/harshraj1695/kernel_programing',
+  },
+  {
+    title: 'DPDK High-Performance Packet Processing',
+    icon: '⚡',
+    description:
+      'Built a suite of userspace networking programs using DPDK demonstrating Poll Mode Drivers, hugepages-backed memory management, and direct NIC communication — bypassing the kernel networking stack for maximum throughput.',
+    techStack: ['C', 'DPDK', 'Poll Mode Drivers', 'HugePages', 'Linux', 'Networking'],
+    githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners',
+  },
+  {
+    title: 'Multi-Client Chat Application',
+    icon: '💬',
+    description:
+      'Built a single-threaded multi-client chat server in C using TCP sockets and select()-based I/O multiplexing, handling concurrent connections via an event-driven fd-monitoring loop. Deliberately chose select() over multithreading to avoid synchronization overhead — demonstrating understanding of the concurrency vs complexity tradeoff in systems design.',
+    techStack: ['C', 'TCP Sockets', 'select()', 'I/O Multiplexing', 'Linux'],
+    githubUrl: 'https://github.com/harshraj1695/TCP_chat_application',
+  },
 ];
 
 const Projects = () => {

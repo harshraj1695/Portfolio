@@ -33,7 +33,7 @@ const projectsData: Project[] = [
     description:
       'Built a suite of userspace networking programs using DPDK demonstrating Poll Mode Drivers, hugepages-backed memory management, and direct NIC communication — bypassing the kernel networking stack for maximum throughput.',
     techStack: ['C', 'DPDK', 'Poll Mode Drivers', 'HugePages', 'Linux', 'Networking'],
-    githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners',
+    githubUrl: 'https://github.com/harshraj1695/DPDK_For_Beginners/tree/main/ports/packet_parsing',
   },
   {
     title: 'Multi-Client Chat Application',

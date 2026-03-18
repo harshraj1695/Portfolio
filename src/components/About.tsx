@@ -37,7 +37,7 @@ const About = () => {
 
           <div className="about-text-card">
             <h3>Systems Engineer | Linux & Networking</h3>
-
+{/* 
             <p>
               Systems Engineer with hands-on experience in Linux system
               programming, networking, and low-level development using C and
@@ -51,6 +51,11 @@ const About = () => {
               fundamentals, and Ethernet driver architecture (RX/TX path, NIC
               basics). I am actively seeking roles in Kernel, Networking, and
               Systems Software Engineering.
+            </p> */}
+            <p> 
+              Most developers write code that runs on top of an OS. I write code that talks to the OS — or bypasses it entirely.
+At WatchGuard Technologies, I've gone from writing my first kernel module to building a DPDK-based programmable firewall that processes packets at line rate, entirely in userspace. Along the way I've debugged NIC driver RX paths with GDB, compiled custom kernels for embedded ARM hardware, and extended VPP's graph node pipeline with custom plugins.
+I'm a final year CSE student at Chandigarh University who found his way into systems programming and hasn't looked back.
             </p>
           </div>
         </div>
